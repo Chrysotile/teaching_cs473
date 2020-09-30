@@ -14,7 +14,12 @@ public class ExampleController {
     public String ping() {
         return "hello world";
     }
-
+    
+    @GetMapping("/name")
+    public String name() {
+        return "Hello World This is {Dor Ulman, 15244874} via Docker";
+    }
+    
     @GetMapping("/example")
     public ExampleResponse example(
             @RequestParam(name="name") String name,
