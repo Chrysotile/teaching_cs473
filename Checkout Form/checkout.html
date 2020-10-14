@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Form</title>
-    <link rel="stylesheet" type="text/css" href="checkout.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkout Form</title>
+        <link rel="stylesheet" type="text/css" href="checkout.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-</head>
-
-<script src="checkout.js"></script>
-
-<body>
-    <div class="container row">
-        <div class="col-md-9 col-sm-12">
-            <h4>Billing Address</h4>
-            <form id="form" onsubmit="handleSubmitForm(event)" novalidate>
+    </head>
+    
+    <script src="checkout.js"></script>
+    
+    <body>
+        <div class="container row">
+            <div class="col-md-9 col-sm-12">
+                <h4>Billing Address</h4>
+            <form id="form" novalidate>
                 <div class="form-row">
                     <div class="col-sm-12 col-md-6 form-group first-name">
                         <label for="first-name">First name</label>
                         <input type="text" class="form-control" name="first-name" placeholder="First Name" required />
-                        <div class="valid-feedback">
-                            Looks valid!
-                        </div>
                         <div class="invalid-feedback">
                             First name is required!
                         </div>
@@ -40,67 +36,91 @@
                     <div class="col-sm-12 col-md-6 form-group last-name">
                         <label for="last-name">Last name</label>
                         <input type="text" class="form-control" name="last-name" placeholder="Last Name" required />
+                        <div class="invalid-feedback">
+                            Last name is required!
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group username">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" name="username" placeholder="Username" required />
+                    <div class="invalid-feedback">
+                        Username is required!
+                    </div>
                 </div>
                 <div class="form-group email">
                     <label for="first-name">Email</label>
                     <input type="email" class="form-control" name="email" placeholder="example@example.com" required />
+                    <div class="invalid-feedback">
+                        Email is required!
+                    </div>
                 </div>
                 <div class="form-group address">
                     <label for="address">Address</label>
                     <input type="text" class="form-control" name="address" placeholder="1234 Main St" required />
+                    <div class="invalid-feedback">
+                        Address is required!
+                    </div>
                 </div>
                 <div class="form-group address2">
-                    <label for="address">Address 2</label>
+                    <label for="address">Address 2 (Optional)</label>
                     <input type="text" class="form-control" name="address2" placeholder="Apartment or Suite" />
                 </div>
                 <div class="form-group country">
                     <label for="country">Country</label>
-                    <select class="form-control" id="country" name="country">
-                        <option value="none">Choose...</option>
+                    <select class="form-control" id="country" name="country" required>
+                        <option value="">Choose...</option>
                         <option>United States</option>
                         <option>United Knigdom</option>
                         <option>United Arab Emirates</option>
                         <option>United Banana Republic</option>
                     </select>
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                 </div>
                 <div class="form-group city">
                     <label for="City">City</label>
-                    <select class="form-control" id="country" name="city">
-                        <option value="none">Choose...</option>
+                    <select class="form-control" id="country" name="city" required>
+                        <option value="">Choose...</option>
                         <option>Los Angeles</option>
                         <option>New York</option>
                         <option>Portland</option>
                     </select>
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                 </div>
                 <div class="form-group state">
                     <label for="state">State</label>
-                    <select class="form-control" id="country" name="state">
-                        <option value="none">Choose...</option>
+                    <select class="form-control" id="country" name="state" required>
+                        <option value="">Choose...</option>
                         <option>AZ</option>
                         <option>CA</option>
                         <option>MN</option>
                         <option>NY</option>
                     </select>
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                 </div>
                 <div class="form-group zipcode">
                     <label for="zip">Zip</label>
-                    <input type="text" class="form-control" name="zip" />
+                    <input type="text" class="form-control" name="zip" required />
+                    <div class="invalid-feedback">
+                        Zipcode is required!
+                    </div>
                 </div>
                 <div class="form-group">
                     <div class="form-check form-check-inline">
                         <input onclick="handleShippingCheckboxClick(event)" class="form-check-input" type="checkbox"
-                            name="shippingCheckbox">
+                            name="shippingCheckbox" required>
                         <label class="form-check-label" for="inlineCheckbox1">Shipping address is the same as my
                             billing</label>
                     </div>
                     <div class="form-check form-check-inline2">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="saveInfo">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="saveInfo" required>
                         <label class="form-check-label" for="inlineCheckbox2">Save this information for next
                             time</label>
                     </div>
@@ -108,75 +128,109 @@
                 <div class="form-group shipping-first-name" id="shipping">
                     <h5>Shipping Address</h5>
                     <label for="first-name-shipping">First name</label>
-                    <input type="text" class="form-control" name="first-name-shipping" placeholder="First Name" />
+                    <input type="text" class="form-control" name="first-name-shipping" placeholder="First Name" required />
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                     <label for="last-name-shipping">Last name</label>
-                    <input type="text" class="form-control" name="last-name-shipping" placeholder="Last Name" />
+                    <input type="text" class="form-control" name="last-name-shipping" placeholder="Last Name" required />
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                     <label for="address">Address</label>
-                    <input type="text" class="form-control" name="shipping-address" placeholder="1234 Main St" />
-                    <label for="address">Address 2</label>
-                    <input type="text" class="form-control" name="shipping-address2" placeholder="Apartment or Suite" />
+                    <input type="text" class="form-control" name="shipping-address" placeholder="1234 Main St" required/>
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
+                    <label for="address">Address 2 (Optional)</label>
+                    <input type="text" class="form-control" name="shipping-address2" placeholder="Apartment or Suite"/>
                     <label for="country">Country</label>
-                    <select class="form-control" id="shipping-country" name="shipping-country">
+                    <select class="form-control" id="shipping-country" name="shipping-country" required>
                         <label for="country">Country</label>
-                        <option value="none">Choose...</option>
+                        <option value="">Choose...</option>
                         <option>United States</option>
                         <option>United Knigdom</option>
                         <option>United Arab Emirates</option>
                         <option>United Banana Republic</option>
                     </select>
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                     <label for="City">City</label>
-                    <select class="form-control" id="shippingCity" name="shipping-city">
-                        <option value="none">Choose...</option>
+                    <select class="form-control" id="shippingCity" name="shipping-city" required>
+                        <option value="">Choose...</option>
                         <option>Los Angeles</option>
                         <option>New York</option>
                         <option>Portland</option>
                     </select>
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                     <label for="state">State</label>
-                    <select class="form-control" id="country" name="shipping-state">
-                        <option value="none">Choose...</option>
+                    <select class="form-control" id="country" name="shipping-state" required>
+                        <option value="">Choose...</option>
                         <option>AZ</option>
                         <option>CA</option>
                         <option>MN</option>
                         <option>NY</option>
                     </select>
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                     <label for="zip">Zip</label>
-                    <input type="text" class="form-control" name="shipping-zip" />
+                    <input type="text" class="form-control" name="shipping-zip" required />
+                    <div class="invalid-feedback">
+                        Zipcode is required!
+                    </div>
                 </div>
                 <div class="form-check credit-card">
-                    <input class="form-check-input" type="radio" name="creditcard" id="credit" value="credit" checked>
+                    <input class="form-check-input" type="radio" name="creditcard" id="credit" value="credit" checked >
                     <label class="form-check-label" for="exampleRadios1">
                         Credit card
                     </label>
                 </div>
                 <div class="form-check debit-card">
-                    <input class="form-check-input" type="radio" name="debitcard" id="debit" value="debit">
+                    <input class="form-check-input" type="radio" name="debitcard" id="debit" value="debit" >
                     <label class="form-check-label" for="exampleRadios2">
                         Debit card
                     </label>
                 </div>
                 <div class="form-check Bitcoin-pay">
-                    <input class="form-check-input" type="radio" name="bitcoin" id="bitcoin" value="bitcoin">
+                    <input class="form-check-input" type="radio" name="bitcoin" id="bitcoin" value="bitcoin" >
                     <label class="form-check-label" for="exampleRadios3">
                         Bitcoin
                     </label>
                 </div>
                 <div class="form-name">
                     <label for="name-on-card">Name on card</label>
-                    <input type="text" class="form-control" name="name-on-card" />
+                    <input type="text" class="form-control" name="name-on-card" required />
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                 </div>
                 <div class="form-name">
                     <label for="card-number">Credit card number</label>
-                    <input type="text" class="form-control" name="card-number" />
+                    <input type="text" class="form-control" name="card-number"  required />
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                 </div>
                 <div class="form-card">
                     <label for="expiration">Expiration</label>
-                    <input type="text" class="form-control" name="expiration" />
+                    <input type="text" class="form-control" name="expiration" required />
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                 </div>
                 <div class="form-card">
                     <label for="cvv">CVV</label>
-                    <input type="text" class="form-control" name="cvv" />
+                    <input type="text" class="form-control" name="cvv" required />
+                    <div class="invalid-feedback">
+                        This field is required!
+                    </div>
                 </div>
-                <input class="form-control" type="submit" />
+                <button class="btn btn-primary" type="submit">Submit</button>
+                <!-- <input class="form-control" type="submit" /> -->
             </form>
         </div>
         <div class="col-md-3 col-sm-12">
@@ -185,9 +239,10 @@
                     Cart
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Milk</li>
-                    <li class="list-group-item">Cookies</li>
-                    <li class="list-group-item">Orange Juice</li>
+                    <li class="list-group-item">Milk    $5</li>
+                    <li class="list-group-item">Cookies $1.99</li>
+                    <li class="list-group-item">Orange Juice $3.99</li>
+                    <li class="list-group">Total: $10.98</li>
                 </ul>
             </div>
         </div>
