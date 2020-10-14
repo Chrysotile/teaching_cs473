@@ -41,19 +41,19 @@ const handleFormData = (data) => {
     }
 
     console.log(data.get("country"));
-    if (data.get("country") === "none") {
+    if (data.get("country") === "") {
         console.error("country field is empty.")
         return false
     }
 
     console.log(data.get("city"));
-    if (data.get("city") === "none") {
+    if (data.get("city") === "") {
         console.error("city field is empty.")
         return false
     }
 
     console.log(data.get("state"));
-    if (data.get("state") === "none") {
+    if (data.get("state") === "") {
         console.error("state field is empty.")
         return false
     }
@@ -83,19 +83,19 @@ const handleFormData = (data) => {
     }
 
     console.log(data.get("shipping-country"));
-    if (data.get("shipping-country") === "none") {
+    if (data.get("shipping-country") === "") {
         console.error(" field is empty.")
         return false
     }
 
     console.log(data.get("shipping-city"));
-    if (data.get("shipping-city") === "none") {
+    if (data.get("shipping-city") === "") {
         console.error("shipping-city field is empty.")
         return false
     }
 
     console.log(data.get("shipping-state"));
-    if (data.get("shipping-state") === "none") {
+    if (data.get("shipping-state") === "") {
         console.error("shipping-state field is empty.")
         return false
     }
@@ -113,7 +113,7 @@ const handleFormData = (data) => {
     }
 
     console.log(data.get("card-number"));
-    if (data.get("card-number") === "none") {
+    if (data.get("card-number") === "") {
         console.error("card-number field is empty.")
         return false
     }
@@ -149,9 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (form.checkValidity() === false) {
             event.stopPropagation();
-        } else {
-            form.classList.add('was-validated');
         }
+        form.classList.add('was-validated');
 
         // handle the form data
         const data = new FormData(event.target);
